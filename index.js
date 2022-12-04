@@ -30,7 +30,7 @@ app.post('/ticket', async (req, res) => {
 
 //get all todos
 
-app.get('/tickets', async (req, res) => {
+app.get('/tickets', (req, res) => {
   // try {
   //   const allTickets = await pool.query('SELECT * FROM tickets');
     // res.json(allTickets.rows);
