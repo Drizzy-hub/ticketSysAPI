@@ -33,7 +33,8 @@ app.post('/ticket', async (req, res) => {
 app.get('/tickets', async (req, res) => {
   try {
     const allTickets = await pool.query('SELECT * FROM tickets');
-    res.json(allTickets.rows);
+    // res.json(allTickets.rows);
+    res.json(console.log('tickets not available yet'));
   } catch (err) {
     console.log(err.message);
   }
