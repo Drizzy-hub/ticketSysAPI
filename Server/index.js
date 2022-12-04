@@ -2,10 +2,9 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const pool = require('./db');
-
+const port = process.env.PORT || 3005;
 app.use(cors());
 app.use(express.json());
-
 //to create a todo
 app.post('/ticket', async (req, res) => {
   try {
@@ -83,6 +82,6 @@ app.get('/tickets', async (req, res) => {
 //   }
 // });
 
-app.listen(3005, () => {
+app.listen(port, () => {
   console.log('server is running on 3005');
 });
