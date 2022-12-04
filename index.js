@@ -31,13 +31,13 @@ app.post('/ticket', async (req, res) => {
 //get all todos
 
 app.get('/tickets', async (req, res) => {
-  try {
-    const allTickets = await pool.query('SELECT * FROM tickets');
+  // try {
+  //   const allTickets = await pool.query('SELECT * FROM tickets');
     // res.json(allTickets.rows);
-    res.json(console.log('tickets not available yet'));
-  } catch (err) {
-    console.log(err.message);
-  }
+    res.send('tickets not available yet');
+  // } catch (err) {
+  //   console.log(err.message);
+  // }
 });
 
 // //get a todo
