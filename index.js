@@ -16,11 +16,11 @@ app.post('/ticket', async (req, res) => {
       showdate,
       venue,
       tourtitle,
-      section
+      section,
     } = req.body;
     const newTicket = await pool.query(
       'INSERT INTO ticketsys (tickettitle,section,roll,seat,imgname,showdate,venue,tourtitle) VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING * ',
-      [tickettitle,roll, seat,imgname,showdate,venue,tourtitle,section]
+      tickettitle, roll, seat, imgname, showdate, venue, tourtitle, section
     );
     res.json(newTicket.rows[0]);
   } catch (err) {
@@ -30,7 +30,7 @@ app.post('/ticket', async (req, res) => {
 
 //get all todos
 
-app.get('/tickets', async(req, res) => {
+app.get('/tickets', async (req, res) => {
   try {
     const allTickets = await pool.query('SELECT * FROM ticketsys');
     res.json(allTickets.rows);
