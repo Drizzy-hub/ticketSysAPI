@@ -42,16 +42,16 @@ app.get('/tickets', async (req, res) => {
 
 // //get a todo
 
-// app.get('/ticket/:id', async (req, res) => {
-//   try {
-//     const { id } = req.params;
-//     const todo = await pool.query('SELECT * FROM todo WHERE todo_id =$1', [id]);
+app.get('/ticket/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const todo = await pool.query('SELECT * FROM todo WHERE todo_id =$1', [id]);
 
-//     res.json(todo.rows[0]);
-//   } catch (err) {
-//     console.log(err.message);
-//   }
-// });
+    res.json(todo.rows[0]);
+  } catch (err) {
+    console.log(err.message);
+  }
+});
 // // edit a todo
 // app.put('/ticket/:id', async (req, res) => {
 //   try {
